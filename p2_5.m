@@ -1,0 +1,12 @@
+clear;
+fs = 8000; Nx = 3*fs;
+t = (0:Nx-1)/fs;
+x1 = sin(2*pi*100*t);
+% sound(x1,fs);
+x2 = 0.1*sin(2*pi*200*t);
+x3 = 0.02*sin(2*pi*720*t);
+x = x1+x2+x3;
+% sound(x,fs);
+% x = x.*exp(-t);
+x = x.*exp(-(t-1.5).^2);
+sound(x,fs);
